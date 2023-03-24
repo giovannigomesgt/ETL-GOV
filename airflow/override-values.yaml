@@ -1,0 +1,27 @@
+defaultAirflowTag: "2.5.0"
+airflowVersion: "2.5.0"
+executor: "CeleryKubernetesExecutor"
+
+# redis:
+#   enabled: false
+
+webserver:
+  defaultUser:
+    enabled: true
+    role: Admin
+    username: giovanni.gomes
+    email: giovannigomes.snt@gmail.com
+    firstName: Giovanni
+    lastName: Leocadio
+    password: admin
+  service:
+    type: LoadBalancer
+
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/giovannigomesgt/ETLGOV.git
+    branch: main
+    subPath: "dags"
+    wait: 15
+
